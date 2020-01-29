@@ -6,11 +6,11 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 /**
- * Class Home
+ * Class HomeController
  * @package App\Controller
  * @Route("/home")
  */
-class Home extends AbstractController
+class HomeController extends AbstractController
 {
     /**
      * @return \Symfony\Component\HttpFoundation\Response

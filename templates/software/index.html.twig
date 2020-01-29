@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello softwareController!{% endblock %}
+
+{% block body %}
+
+    <h1 class="text-center m-5">All my softwares</h1>
+    </div>
+    {% for software in softwares %}
+        {% if loop.index % 2 == 1 %}
+            <div class="media mb-3 mt-5">
+                <div class="media-body ml-5 text-right m-auto">
+                    <h3>{{ software.name }}</h3>
+                    {{ software.description }}
+                    <p>{{ software.link }}</p>
+                </div>
+                <img class="ml-5" src="{{ software.picture }}">
+            </div>
+        {% else %}
+            <div class="media mb-3 mt-5">
+                <img class="ml-5" src="{{ software.picture }}">
+
+                <div class="media-body ml-5 "> <h3>{{ software.name }}</h3>
+                    {{ software.description }}
+                    <p>{{ software.link }}</p>
+                </div>
+            </div>
+        {% endif %}
+
+    {% endfor %}
+{% endblock %}

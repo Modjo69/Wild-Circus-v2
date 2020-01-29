@@ -8,7 +8,22 @@
         {% endblock %}
     </head>
     <body>
+    {% block navbar %}
+    {% if app.request.get('_route')=='home' %}
     <div class="image-banniere">
+        {% endif %}
+    {% if app.request.get('_route')=='website' %}
+    <div class="image-banniere-website">
+        {% endif %}
+
+    {% if app.request.get('_route')=='software' %}
+    <div class="image-banniere-software">
+        {% endif %}
+
+    {% if app.request.get('_route')=='apps' %}
+    <div class="image-banniere-apps">
+        {% endif %}
+
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
         <a class=" navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,6 +46,7 @@
             </ul>
         </div>
     </nav>
+        {% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}

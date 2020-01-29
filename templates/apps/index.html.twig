@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}My Apps{% endblock %}
+
+{% block body %}
+
+    <h1 class="text-center m-5">All my apps</h1>
+    </div>
+    {% for app in apps %}
+        {% if loop.index  %2 ==1 %}
+            <div class="media mb-3 mt-5">
+                <div class="media-body  text-center m-auto ">
+                    <h2>{{ app.name }}</h2>
+
+                    <p class="m-auto w-50 text-center">{{ app.description }}</p>
+                    <br>
+                    <a>{{ app.link }}</a>
+                </div>
+                <img class="mr-5" src="{{ app.picture }}">
+            </div>
+            {% else %}
+                <div class="media mb-3 mt-5">
+                <img class="ml-5" src="{{ app.picture }}">
+                <div class="media-body text-center m-auto ">
+                    <h2>{{ app.name }}</h2>
+                    <p class="m-auto w-50 text-center">{{ app.description }}</p>
+                    <br>
+                    <a >{{ app.link }}</a>
+                </div>
+            </div>
+        {% endif %}
+
+    {% endfor %}
+{% endblock %}

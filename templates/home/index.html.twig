@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 
+
 {% block  body %}
 <div class="title">
     <h3 class="text-primary text-center">Hello everyone</h3>
@@ -11,21 +12,21 @@
       <div class="row">
 
           <div  class="col-4 p-0">
-              <a class="w-img" href="">
+              <a class="w-img" href="{{ path('website') }}">
                   <img id="website" class="w-100" src="https://images.pexels.com/photos/3585014/pexels-photo-3585014.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
         <h2 class="w-text ">My Website</h2>
               </a>
           </div>
 
           <div class="col-4 p-0">
-              <a class="a-img">
+              <a class="a-img" href="{{ path('apps') }}">
                   <img id="app" class="w-100" src="https://images.pexels.com/photos/1290515/pexels-photo-1290515.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
                   <h2 class="a-text">My mobile-app</h2>
               </a>
           </div>
 
           <div class="col-4 p-0">
-              <a class="s-img">
+              <a class="s-img" href="{{ path('software') }}">
                   <img id="software" class="w-100" src="https://images.pexels.com/photos/193349/pexels-photo-193349.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
                   <h2 class="s-text">My software</h2>
               </a>

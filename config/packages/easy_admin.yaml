@@ -1,6 +1,7 @@
 easy_admin:
   entities:
     # change the following to the namespaces of your own entities
-    - App\Entity\Actors
-    - App\Entity\Shows
     - App\Entity\User
+    - App\Entity\Website
+    - App\Entity\Apps
+    - App\Entity\Software

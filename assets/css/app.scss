@@ -1,96 +1,118 @@
-
 @import "~bootstrap/scss/bootstrap";
+
 body {
 }
 
 
-.title{
-    padding-top: 100px;
+.title {
+  padding-top: 100px;
 }
 
-.image-banniere{
+.image-banniere {
   background-image: url("https://images.pexels.com/photos/934062/pexels-photo-934062.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-height: 100vh;
+  height: 100vh;
   width: 100%;
 }
 
-#website{
-
+.image-banniere-website{
+  background-image: url("https://cdn.pixabay.com/photo/2017/02/05/00/19/web-design-2038872_960_720.jpg");
+  height: 80vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.w-img{
+.image-banniere-software{
+  background-image: url("https://cdn.pixabay.com/photo/2015/02/05/08/06/macbook-624707_960_720.jpg");
+  height: 80vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.image-banniere-apps{
+  background-image: url("https://support.apple.com/content/dam/edam/applecare/images/en_US/psp/psp-hero-banner-books.image.large_2x.jpg");
+  height: 80vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.w-img {
   display: grid;
   transition: opacity .8s;
 }
 
-.w-img>*{
-  grid-area:1/1/-1/-1;
-}
-.w-text{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:saddlebrown;
-  opacity:0;
-  transition:opacity .8s;
+.w-img > * {
+  grid-area: 1/1/-1/-1;
 }
 
-.w-text:hover{
+.w-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: saddlebrown;
+  opacity: 0;
+  transition: opacity .8s;
+}
+
+.w-text:hover {
   opacity: 1;
 
 }
 
-.w-img:hover{
+.w-img:hover {
   opacity: 0.7;
 }
 
-.a-img{
+.a-img {
   display: grid;
   transition: opacity .8s;
 }
 
-.a-img>*{
-  grid-area:1/1/-1/-1;
-}
-.a-text{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:BLACK;
-  opacity:0;
-  transition:opacity .8s;
+.a-img > * {
+  grid-area: 1/1/-1/-1;
 }
 
-.a-text:hover{
+.a-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: BLACK;
+  opacity: 0;
+  transition: opacity .8s;
+}
+
+.a-text:hover {
   opacity: 1;
 
 }
 
-.a-img:hover{
+.a-img:hover {
   opacity: 0.7;
 }
 
-.s-img{
+.s-img {
   display: grid;
   transition: opacity .8s;
 }
 
-.s-img>*{
-  grid-area:1/1/-1/-1;
-}
-.s-text{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  color:white;
-  opacity:0;
-  transition:opacity .8s;
+.s-img > * {
+  grid-area: 1/1/-1/-1;
 }
 
-.s-text:hover{
+.s-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  opacity: 0;
+  transition: opacity .8s;
+}
+
+.s-text:hover {
   opacity: 1;
 
 }
 
-.s-img:hover{
+.s-img:hover {
   opacity: 0.7;
 }
