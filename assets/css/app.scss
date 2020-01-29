@@ -1,0 +1,96 @@
+
+@import "~bootstrap/scss/bootstrap";
+body {
+}
+
+
+.title{
+    padding-top: 100px;
+}
+
+.image-banniere{
+  background-image: url("https://images.pexels.com/photos/934062/pexels-photo-934062.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+height: 100vh;
+  width: 100%;
+}
+
+#website{
+
+}
+.w-img{
+  display: grid;
+  transition: opacity .8s;
+}
+
+.w-img>*{
+  grid-area:1/1/-1/-1;
+}
+.w-text{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:saddlebrown;
+  opacity:0;
+  transition:opacity .8s;
+}
+
+.w-text:hover{
+  opacity: 1;
+
+}
+
+.w-img:hover{
+  opacity: 0.7;
+}
+
+.a-img{
+  display: grid;
+  transition: opacity .8s;
+}
+
+.a-img>*{
+  grid-area:1/1/-1/-1;
+}
+.a-text{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:BLACK;
+  opacity:0;
+  transition:opacity .8s;
+}
+
+.a-text:hover{
+  opacity: 1;
+
+}
+
+.a-img:hover{
+  opacity: 0.7;
+}
+
+.s-img{
+  display: grid;
+  transition: opacity .8s;
+}
+
+.s-img>*{
+  grid-area:1/1/-1/-1;
+}
+.s-text{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  opacity:0;
+  transition:opacity .8s;
+}
+
+.s-text:hover{
+  opacity: 1;
+
+}
+
+.s-img:hover{
+  opacity: 0.7;
+}
