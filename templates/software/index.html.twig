@@ -4,28 +4,33 @@
 
 {% block body %}
 
-    <h1 class="text-center m-5">All my softwares</h1>
+    <h1 class="text-center m-5 text-white">All my softwares</h1>
     </div>
     {% for software in softwares %}
+<div class="article m-5 shadow-sm" style="border: 1px solid burlywood ">
         {% if loop.index % 2 == 1 %}
-            <div class="media mb-3 mt-5">
-                <div class="media-body ml-5 text-right m-auto">
-                    <h3>{{ software.name }}</h3>
-                    {{ software.description }}
-                    <p>{{ software.link }}</p>
+            <div class="">
+                <div class="media  shadow" style="border: 2px solid burlywood ">
+                    <div class="media-body  text-center m-auto">
+                        <h3>{{ software.name }}</h3>
+                        <p class="m-auto w-50 text-center">{{ software.description }}</p>
+                        <p>{{ software.link }}</p>
+                    </div>
+                    <img class=" w-50 " src="{{ software.picture }}">
                 </div>
-                <img class="ml-5" src="{{ software.picture }}">
             </div>
-        {% else %}
-            <div class="media mb-3 mt-5">
-                <img class="ml-5" src="{{ software.picture }}">
 
-                <div class="media-body ml-5 "> <h3>{{ software.name }}</h3>
-                    {{ software.description }}
+        {% else %}
+            <div class="media  shadow-lg">
+                <img class=" w-50" src="{{ software.picture }}">
+
+                <div class="media-body  text-center m-auto"> <h3>{{ software.name }}</h3>
+                    <p class="m-auto w-50 text-center">{{ software.description }}</p>
                     <p>{{ software.link }}</p>
                 </div>
             </div>
         {% endif %}
+</div>
 
     {% endfor %}
 {% endblock %}

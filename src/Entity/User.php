@@ -8,7 +8,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -18,58 +18,102 @@ class User
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=180, unique=true)
      */
-    private $Name;
+    private $email;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="json")
      */
-    private $Email;
+    private $roles = [];
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string The hashed password
+     * @ORM\Column(type="string")
      */
-    private $Password;
+    private $password;
+
+    public function __toString()
+    {
+        return $this->email;
+        // TODO: Implement __toString() method.
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getName(): ?string
-    {
-        return $this->Name;
-    }
-
-    public function setName(string $Name): self
-    {
-        $this->Name = $Name;
-
-        return $this;
-    }
-
     public function getEmail(): ?string
     {
-        return $this->Email;
+        return $this->email;
     }
 
-    public function setEmail(string $Email): self
+    public function setEmail(string $email): self
     {
-        $this->Email = $Email;
+        $this->email = $email;
 
         return $this;
     }
 
-    public function getPassword(): ?string
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUsername(): string
     {
-        return $this->Password;
+        return (string) $this->email;
     }
 
-    public function setPassword(string $Password): self
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
     {
-        $this->Password = $Password;
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
 
         return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getPassword(): string
+    {
+        return (string) $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getSalt()
+    {
+        // not needed when using the "bcrypt" algorithm in security.yaml
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 }

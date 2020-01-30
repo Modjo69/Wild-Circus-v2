@@ -4,29 +4,31 @@
 
 {% block body %}
 
-    <h1 class="text-center m-5">All my websites</h1>
-    </div>
-    {% for website in websites %}
-        {% if loop.index % 2 == 1 %}
-            <div class="media mb-3 mt-5" >
-                <div class="media-body m-5 text-right m-auto ">
-                    <h3>{{ website.name }}</h3>
-                    {{ website.description }}
-                    <a>{{ website.link }}</a>
-                </div>
-                <img class="ml-5" src="{{ website.picture }}">
+<h1 class="text-center m-5 text-white" style="text-shadow: black 1px 1px;">All my websites</h1>
+</div>
+{% for website in websites %}
+<div class="article m-5 shadow-sm" style="border: 1px solid burlywood ">
+    {% if loop.index % 2 == 1 %}
+        <div class="media ">
+            <div class="media-body  text-center m-auto ">
+                <h3>{{ website.name }}</h3>
+                <p class="m-auto w-50 text-center">{{ website.description }}</p>
+                <a>{{ website.link }}</a>
             </div>
-        {% endif %}
-        <div class="media mb-3 mt-5">
-        <img class="ml-5" src="{{ website.picture }}">
-
-        <div class="media-body ml-5  text-center">
-            <h3>{{ website.name }}</h3>
-            {{ website.description }}
-            <a>{{ website.link }}</a>
+            <img class="" src="{{ website.picture }}">
         </div>
-    </div>
-        {% else %}
+    {% else %}
+        <div class="media  ">
+            <img class="w-50" src="{{ website.picture }}">
+
+            <div class="media-body  text-center m-auto">
+                <h3>{{ website.name }}</h3>
+                <p class="m-auto w-50 text-center">{{ website.description }}</p>
+                <a>{{ website.link }}</a>
+            </div>
+        </div> {% endif %}
+</div>
+
 
     {% endfor %}
-{% endblock %}
+    {% endblock %}
